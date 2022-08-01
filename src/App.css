@@ -1,5 +1,6 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #E8D5D5;
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 12vh 0;
 }

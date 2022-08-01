@@ -1,62 +1,33 @@
 import styled from 'styled-components';
 
+const MENU_COLORS = {
+    text: '#4A586E',
+    background: '#FFDFDC',
+    buttonBackground: '#FEAC92'
+};
+
 export const MenuContainer = styled.div`
-    @media only screen and (max-width: 600px) {
-        width: 60vw;
-    }
-    @media only screen and (min-width: 600px) {
-        width: 50vw;
-    }
-    @media only screen and (min-width: 768px) {
-        width: 40vw;
-    }
-    @media only screen and (min-width: 992px) {
-        width: 30vw;
-    }
-    height: 70vh;
-    margin: 50px auto;
+    height: 500px;
+    width: 500px;
+    gap: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30vh;
     border-radius: 4%;
     border: 5px solid #DCABAE;
-    background-color: #FFDFDC;
-    color: #4A586E;
+    background-color: ${MENU_COLORS.background};
+    color: ${MENU_COLORS.text};
 
     h1 {
-        @media only screen and (max-width: 600px) {
-            font-size: 45px;
-        }
-
-        @media only screen and (min-width: 600px) {
-            font-size: 45px;
-        }
-
-        margin: 50px 0;
         font-size: 50px;
     }
 
     Button {
-        @media only screen and (max-width: 600px) {
-            width: 30vw;
-        }
-
-        @media only screen and (min-width: 600px) {
-            width: 25vw;
-        }
-        @media only screen and (min-width: 768px) {
-            width: 20vw;
-           
-        }
-        @media only screen and (min-width: 992px) {
-            width: 15vw;
-        }
-
-        height: 7vh;
+        height: 40px;
+        width: 180px;
         font-size: 20px;
-        color: #4A586E;
-        background-color: #FEAC92;
-        border: 3px #4A586E dashed;
+        color: ${MENU_COLORS.text};
+        background-color: ${MENU_COLORS.buttonBackground};
+        border: 3px ${MENU_COLORS.text} dashed;
     }
 `;
