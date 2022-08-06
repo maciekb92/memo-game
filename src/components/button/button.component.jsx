@@ -1,16 +1,18 @@
-import { StartButton } from "./button.styles";
+import './button.styles.scss';
 
 export const BUTTON_TYPE_CLASSES = {
     start: 'start'
 };
 
-const getButton = (buttonType) => ({
-    [BUTTON_TYPE_CLASSES.start]: StartButton
-}[buttonType]);
-
 const Button = ({ children, buttonType, ...otherProps }) => {
-    const CustomButton = getButton(buttonType);
-    return <CustomButton {...otherProps}>{children}</CustomButton>
+    return (
+        <button
+            className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}
+            {...otherProps}
+        >
+            {children}
+        </button>
+    );
 };
 
 export default Button;

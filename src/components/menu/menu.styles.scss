@@ -1,0 +1,15 @@
+.menu-container {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4%;
+  border: 5px solid #dcabae;
+  background-color: #ffdfdc;
+  color: #4a586e;
+
+  h1 {
+    font-size: 50px;
+  }
+}
