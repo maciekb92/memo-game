@@ -2,11 +2,45 @@
   height: 40px;
   width: 180px;
   font-size: 20px;
+  color: #4a586e;
 }
 
 .start {
-  color: #4a586e;
   background-color: #feac92;
   border: 3px dashed #4a586e;
   margin: 20px 0;
+}
+
+.difficulty-easy,
+.difficulty-medium,
+.difficulty-hard {
+  margin-bottom: 5px;
+  width: 130px;
+}
+
+.difficulty-easy {
+  background-color: #d4f794;
+  border: 3px dashed #8ea663;
+}
+
+.difficulty-medium {
+  background-color: #f3f59a;
+  border: 3px dashed #979957;
+}
+
+.difficulty-hard {
+  background-color: #f5bd9a;
+  border: 3px dashed #995f3a;
+}
+
+.difficulty-easy:focus {
+  background-color: #b3d07e;
+}
+
+.difficulty-medium:focus {
+  background-color: #c1c27a;
+}
+
+.difficulty-hard:focus {
+  background-color: #ca9c80;
 }

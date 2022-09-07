@@ -1,24 +1,17 @@
-import { CARDS_DATA } from '../../cards-data';
+import { useSelector } from 'react-redux';
+import { selectCards } from '../../store/cards/cards.selector';
 import SingleCard from '../single-card/single-card.component';
 import './cards-directory.styles.scss';
 
-const getRandomCards = (cardsCount) => {
-    return CARDS_DATA
-        .filter((card) => card.id !== 0)
-        .sort(() => 0.5 - Math.random())
-        .slice(0, cardsCount);
-};
-
-const CardsDirectory = ({ cardsCount, cardsEmpty }) => {
-    const randomCards = getRandomCards(cardsCount);
+const CardsDirectory = ({ cardType }) => {
+    const cards = useSelector(selectCards);
 
     return (
-        <div className='cards-directory-container'>
-            {randomCards.map((value) => (
+        <div className={`cards-directory-container ${cardType}`}>
+            {cards.map((card) => (
                 <SingleCard
-                    key={value.id}
-                    card={value}
-                    isCardEmpty={cardsEmpty}
+                    key={card.id}
+                    card={card}
                 />
             ))}
         </div>
