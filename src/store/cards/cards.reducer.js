@@ -1,7 +1,8 @@
 import CARDS_ACTION_TYPES from './cards.types';
 
 const INITIAL_STATE = {
-    cards: []
+    cards: [],
+    isCardRotationDisabled: false
 };
 
 export const cardsReducer = (state = INITIAL_STATE, action = {}) => {
@@ -13,11 +14,11 @@ export const cardsReducer = (state = INITIAL_STATE, action = {}) => {
                 ...state,
                 cards: payload
             };
-        case CARDS_ACTION_TYPES.SET_PREV_IMAGE_PATH:
+        case CARDS_ACTION_TYPES.SET_IS_CARD_ROTATION_DISABLED:
             return {
                 ...state,
-                cards: payload
-            }
+                isCardRotationDisabled: payload
+            };
         default:
             return state;
     }

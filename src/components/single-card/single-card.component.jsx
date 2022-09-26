@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCards } from '../../store/cards/cards.selector';
-import { setPrevImagePath } from '../../store/cards/cards.action';
+import { selectCards, selectIsCardRotationDisabled } from '../../store/cards/cards.selector';
+import { setCurrentImagePath } from '../../store/cards/cards.action';
 import './single-card.styles.scss';
 
 export const CARD_TYPE_CLASSES = {
@@ -11,21 +11,22 @@ export const CARD_TYPE_CLASSES = {
 };
 
 const SingleCard = ({ card }) => {
-    const { name, imagePath, emptyImagePath, prevImagePath } = card;
+    const { name, imagePath, currentImagePath } = card;
     const dispatch = useDispatch();
     const cards = useSelector(selectCards);
+    const isCardRotationDisabled = useSelector(selectIsCardRotationDisabled);
+    const toggleImagePath = () => dispatch(setCurrentImagePath(cards, [card], imagePath));
 
-    const prevImagePathHandler = () => {
-        const newPrevImagePath = prevImagePath === imagePath ? emptyImagePath : imagePath;
-        dispatch(setPrevImagePath(cards, card, newPrevImagePath));
+    const currentImagePathHandler = () => {
+        if (!isCardRotationDisabled) toggleImagePath();
     }
 
     return (
         <Fragment>
             <img className='single-card-container'
-                src={prevImagePath}
+                src={currentImagePath}
                 alt={`${name}`}
-                onClick={prevImagePathHandler}
+                onClick={currentImagePathHandler}
             />
         </Fragment>
     );

@@ -25,6 +25,8 @@ const getCopiedCards = (cardsToCopy) => {
     return copiedCards;
 };
 
+const getShuffledCards = (cards) => cards.sort(() => 0.5 - Math.random());
+
 const getCardsCount = (gameDifficulty) => gameDifficulties[gameDifficulty];
 
 const GameArea = () => {
@@ -34,9 +36,10 @@ const GameArea = () => {
     const randomCards = getRandomCards(cardsCount);
     const copiedCards = getCopiedCards(randomCards);
     const cards = [...randomCards.concat(copiedCards)];
+    const shuffledCards = getShuffledCards(cards);
 
     useEffect(() => {
-        dispatch(setCards(cards));
+        dispatch(setCards(shuffledCards));
     }, []);
 
     return (
