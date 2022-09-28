@@ -1,7 +1,9 @@
+import { CARDS_DATA } from "../../cards-data";
 import CARDS_ACTION_TYPES from "./cards.types";
 
 const INITIAL_STATE = {
     cards: [],
+    emptyImagePath: CARDS_DATA[0].imagePath,
     isCardRotationDisabled: false,
 };
 

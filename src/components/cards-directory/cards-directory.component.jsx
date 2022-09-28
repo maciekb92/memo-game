@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectCards } from "../../store/cards/cards.selector";
+import { selectCards, selectEmptyImagePath } from "../../store/cards/cards.selector";
 import {
     setCurrentImagePath,
     setIsCardDisabled,
@@ -16,8 +16,9 @@ const CardsDirectory = ({ cardType }) => {
         (card) => card.currentImagePath === card.imagePath && !card.isCardDisabled
     );
     const isRotationDisabled = true;
+    const emptyImagePath = useSelector(selectEmptyImagePath);
 
-    const toggleEmptyImagePath = (cardsToSetEmptyImagePath, emptyImagePath) =>
+    const toggleEmptyImagePath = (cardsToSetEmptyImagePath) =>
         setTimeout(() => {
             dispatch(
                 setCurrentImagePath(cards, cardsToSetEmptyImagePath, emptyImagePath)
@@ -34,7 +35,7 @@ const CardsDirectory = ({ cardType }) => {
 
         cardsToCompare.reduce((prevCard, currentCard) =>
             prevCard.imagePath !== currentCard.imagePath
-                ? toggleEmptyImagePath(cardsToCompare, currentCard.emptyImagePath)
+                ? toggleEmptyImagePath(cardsToCompare)
                 : toggleIsCardDisabled(cardsToCompare)
         );
 
