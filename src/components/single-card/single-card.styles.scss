@@ -1,4 +1,13 @@
 .single-card-container {
   width: 115px;
   height: 115px;
+  transition: transform 0.4s;
+}
+
+.hidden {
+  transform: rotateY(180deg);
+}
+
+.unhidden {
+  transform: rotateY(0deg);
 }

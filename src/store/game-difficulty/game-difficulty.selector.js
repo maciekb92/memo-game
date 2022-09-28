@@ -1,1 +1,2 @@
-export const selectGameDifficulty = (state) => state.gameDifficulty.difficulty;
+export const selectGameDifficulty = (state) =>
+    state.gameDifficulty.difficulty;

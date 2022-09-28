@@ -1,10 +1,10 @@
-import CARDS_ACTION_TYPES from './cards.types';
-import { createAction } from '../reducer.utils';
+import CARDS_ACTION_TYPES from "./cards.types";
+import { createAction } from "../reducer.utils";
 
 const updateCurrentImagePath = (cards, cardsToUpdate, currentImagePath) => {
     return cards.map((card) => {
-        const existingCard = cardsToUpdate.find(cardToUpdate =>
-            cardToUpdate.id == card.id
+        const existingCard = cardsToUpdate.find(
+            (cardToUpdate) => cardToUpdate.id == card.id
         );
 
         return existingCard !== undefined
@@ -15,8 +15,8 @@ const updateCurrentImagePath = (cards, cardsToUpdate, currentImagePath) => {
 
 const updateIsCardDisabled = (cards, cardsToUpdate) => {
     return cards.map((card) => {
-        const existingCard = cardsToUpdate.find(cardToUpdate =>
-            cardToUpdate.id == card.id
+        const existingCard = cardsToUpdate.find(
+            (cardToUpdate) => cardToUpdate.id == card.id
         );
 
         return existingCard !== undefined
@@ -29,7 +29,11 @@ export const setCards = (cards) =>
     createAction(CARDS_ACTION_TYPES.SET_CARDS, cards);
 
 export const setCurrentImagePath = (cards, cardsToUpdate, currentImagePath) => {
-    const newCards = updateCurrentImagePath(cards, cardsToUpdate, currentImagePath);
+    const newCards = updateCurrentImagePath(
+        cards,
+        cardsToUpdate,
+        currentImagePath
+    );
     return createAction(CARDS_ACTION_TYPES.SET_CARDS, newCards);
 };
 
@@ -39,4 +43,7 @@ export const setIsCardDisabled = (cards, cardsToUpdate) => {
 };
 
 export const setIsRotationDisabled = (isRotationDisabled) =>
-    createAction(CARDS_ACTION_TYPES.SET_IS_CARD_ROTATION_DISABLED, isRotationDisabled);
+    createAction(
+        CARDS_ACTION_TYPES.SET_IS_CARD_ROTATION_DISABLED,
+        isRotationDisabled
+    );
