@@ -1,7 +1,7 @@
-import GAME_DIFFICULTY_ACTION_TYPES from "./game-difficulty.types";
+import GAME_DIFFICULTY_ACTION_TYPES from './game-difficulty.types';
 
 const INITIAL_GAME_DIFFICULTY_STATE = {
-    difficulty: "easy",
+    difficulty: 'easy',
 };
 
 export const gameDifficulty = (

@@ -1,5 +1,5 @@
-import { CARDS_DATA } from "../../cards-data";
-import CARDS_ACTION_TYPES from "./cards.types";
+import { CARDS_DATA } from '../../cards-data';
+import CARDS_ACTION_TYPES from './cards.types';
 
 const INITIAL_STATE = {
     cards: [],

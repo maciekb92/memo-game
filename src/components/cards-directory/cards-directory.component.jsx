@@ -1,13 +1,16 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectCards, selectEmptyImagePath } from "../../store/cards/cards.selector";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    selectCards,
+    selectEmptyImagePath,
+} from '../../store/cards/cards.selector';
 import {
     setCurrentImagePath,
     setIsCardDisabled,
     setIsRotationDisabled,
-} from "../../store/cards/cards.action";
-import SingleCard from "../single-card/single-card.component";
-import "./cards-directory.styles.scss";
+} from '../../store/cards/cards.action';
+import SingleCard from '../single-card/single-card.component';
+import './cards-directory.styles.scss';
 
 const CardsDirectory = ({ cardType }) => {
     const dispatch = useDispatch();

@@ -1,11 +1,14 @@
-import { useEffect, Fragment } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setCards, setCurrentImagePath } from "../../store/cards/cards.action";
-import { selectEmptyImagePath } from "../../store/cards/cards.selector";
-import { selectGameDifficulty } from "../../store/game-difficulty/game-difficulty.selector";
-import CardsDirectory from "../../components/cards-directory/cards-directory.component";
-import { CARD_TYPE_CLASSES } from "../../components/single-card/single-card.component";
-import { CARDS_DATA } from "../../cards-data";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCards, setCurrentImagePath } from '../../store/cards/cards.action';
+import { selectEmptyImagePath } from '../../store/cards/cards.selector';
+import { selectGameDifficulty } from '../../store/game-difficulty/game-difficulty.selector';
+import CardsDirectory from '../../components/cards-directory/cards-directory.component';
+import { CARD_TYPE_CLASSES } from '../../components/single-card/single-card.component';
+import { CARDS_DATA } from '../../cards-data';
+import Button, {
+  BUTTON_TYPE_CLASSES,
+} from '../../components/button/button.component';
 
 const gameDifficulties = {
   easy: 6,
@@ -38,15 +41,26 @@ const GameArea = () => {
   const cards = [...randomCards.concat(copiedCards)];
   const shuffledCards = getShuffledCards(cards);
 
-  useEffect(() => {
+  const startNewGame = () => {
     dispatch(setCards(shuffledCards));
     dispatch(setCurrentImagePath(cards, shuffledCards, emptyImagePath));
+  };
+
+  useEffect(() => {
+    startNewGame();
   }, []);
 
   return (
-    <Fragment>
+    <div className='game-area-container'>
       <CardsDirectory cardType={CARD_TYPE_CLASSES[gameDifficulty]} />
-    </Fragment>
+      <Button
+        buttonType={BUTTON_TYPE_CLASSES.restart}
+        type='button'
+        onClick={startNewGame}
+      >
+        Restart Game
+      </Button>
+    </div>
   );
 };
 

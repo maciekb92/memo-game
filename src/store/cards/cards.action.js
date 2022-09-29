@@ -1,5 +1,5 @@
-import CARDS_ACTION_TYPES from "./cards.types";
-import { createAction } from "../reducer.utils";
+import CARDS_ACTION_TYPES from './cards.types';
+import { createAction } from '../reducer.utils';
 
 const updateCurrentImagePath = (cards, cardsToUpdate, currentImagePath) => {
     return cards.map((card) => {

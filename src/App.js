@@ -1,9 +1,9 @@
-import Menu from "./routes/menu/menu.component";
-import GameArea from "./routes/game-area/game-area.component";
+import Menu from './routes/menu/menu.component';
+import GameArea from './routes/game-area/game-area.component';
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
-import "./App.scss";
+import './App.scss';
 
 function App() {
   return (
