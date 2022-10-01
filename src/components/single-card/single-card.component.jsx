@@ -18,6 +18,7 @@ const SingleCard = ({ card }) => {
   const dispatch = useDispatch();
   const cards = useSelector(selectCards);
   const isCardRotationDisabled = useSelector(selectIsCardRotationDisabled);
+  
   const toggleImagePath = () =>
     dispatch(setCurrentImagePath(cards, [card], imagePath));
 
