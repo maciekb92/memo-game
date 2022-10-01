@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { cardsReducer } from './cards/cards.reducer';
-import { gameDifficulty } from './game-difficulty/game-difficulty.reducer';
+import { gameDifficultyReducer } from './game-difficulty/game-difficulty.reducer';
+import { counterReducer } from './counter/counter.reducer';
 
 export const rootReducer = combineReducers({
     cards: cardsReducer,
-    gameDifficulty: gameDifficulty
+    gameDifficulty: gameDifficultyReducer,
+    counter: counterReducer
 });
