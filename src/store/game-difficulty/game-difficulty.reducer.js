@@ -4,7 +4,7 @@ const INITIAL_GAME_DIFFICULTY_STATE = {
     difficulty: 'easy',
 };
 
-export const gameDifficulty = (
+export const gameDifficultyReducer = (
     state = INITIAL_GAME_DIFFICULTY_STATE,
     action = {}
 ) => {
