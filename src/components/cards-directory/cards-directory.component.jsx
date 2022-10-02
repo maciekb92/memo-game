@@ -48,17 +48,19 @@ const CardsDirectory = ({ cardType }) => {
         dispatch(setIsRotationDisabled(!isRotationDisabled));
     }, 1000);
 
-    useEffect(() => {
-        if (cardsToCompare.length < 2) return;
-
-        toggleIsRotationDisabled();
-
+    const compareCards = () => {
         cardsToCompare.reduce((prevCard, currentCard) =>
             prevCard.imagePath !== currentCard.imagePath
                 ? toggleEmptyImagePath(cardsToCompare)
                 : toggleIsCardDisabled(cardsToCompare)
         );
+    };
 
+    useEffect(() => {
+        if (cardsToCompare.length < 2) return;
+
+        toggleIsRotationDisabled();
+        compareCards();
         toggleIsRotationEnabled();
         toggleCounterValue();
     });
