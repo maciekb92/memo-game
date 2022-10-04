@@ -7,7 +7,7 @@ const Counter = () => {
 
     return (
         <div className='counter-container'>
-            <span className='counter-value'>{currentCounterValue}</span>
+            <span className='counter-value'>Moves: {currentCounterValue}</span>
         </div>
     );
 };

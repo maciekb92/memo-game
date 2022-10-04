@@ -23,13 +23,14 @@ const CardsDirectory = ({ cardType }) => {
         (card) => card.currentImagePath === card.imagePath && !card.isCardDisabled
     );
     const isRotationDisabled = true;
+    const defaultTimeout = 1000;
 
     const toggleEmptyImagePath = (cardsToSetEmptyImagePath) =>
         setTimeout(() => {
             dispatch(
                 setCurrentImagePath(cards, cardsToSetEmptyImagePath, emptyImagePath)
             );
-        }, 1000);
+        }, defaultTimeout);
 
     const toggleIsCardDisabled = (cardsToDisable) =>
         dispatch(setIsCardDisabled(cards, cardsToDisable));
@@ -38,7 +39,7 @@ const CardsDirectory = ({ cardType }) => {
         const increasedCounterValue = counterValue + 1;
         setTimeout(() => {
             dispatch(setCounterValue(increasedCounterValue));
-        }, 1000);
+        }, defaultTimeout);
     };
 
     const toggleIsRotationDisabled = () =>
@@ -46,7 +47,7 @@ const CardsDirectory = ({ cardType }) => {
 
     const toggleIsRotationEnabled = () => setTimeout(() => {
         dispatch(setIsRotationDisabled(!isRotationDisabled));
-    }, 1000);
+    }, defaultTimeout);
 
     const compareCards = () => {
         cardsToCompare.reduce((prevCard, currentCard) =>
