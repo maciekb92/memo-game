@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setGameDifficulty } from '../../store/game-difficulty/game-difficulty.action';
 import Button, {
   BUTTON_TYPE_CLASSES,
-} from '../../components/button/button.component';
+} from '../button/button.component';
 import './menu.styles.scss';
 
 const Menu = () => {

@@ -7,10 +7,10 @@
   border-radius: 4%;
   border: 5px solid #dcabae;
   background-color: #ffdfdc;
-  color: #4a586e;
 
   h1 {
-    font-size: 50px;
+    font-size: 55px;
+    color: #ae5f5f;
   }
 }
 
@@ -19,4 +19,8 @@
   flex-direction: column;
   margin-bottom: 15px;
   align-items: center;
+
+  h2 {
+    color: #4a586e;
+  }
 }
