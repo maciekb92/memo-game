@@ -3,9 +3,10 @@ import './button.styles.scss';
 export const BUTTON_TYPE_CLASSES = {
     start: 'start',
     restart: 'restart',
+    back: 'back',
     difficultyEasy: 'difficulty-easy',
     difficultyMedium: 'difficulty-medium',
-    difficultyHard: 'difficulty-hard',
+    difficultyHard: 'difficulty-hard'
 };
 
 const Button = ({ children, buttonType, ...otherProps }) => {

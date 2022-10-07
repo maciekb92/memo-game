@@ -7,6 +7,7 @@ import { selectCounterValue } from '../../store/counter/counter.selector';
 import { setCounterValue } from '../../store/counter/counter.action';
 import CardsDirectory from '../../components/cards-directory/cards-directory.component';
 import Counter from '../../components/counter/counter.component';
+import BackButton from '../../components/back-button/back-button.component';
 import { CARD_TYPE_CLASSES } from '../../components/single-card/single-card.component';
 import { CARDS_DATA } from '../../cards-data';
 import Button, {
@@ -69,17 +70,18 @@ const GameArea = () => {
     <div className='game-area-container'>
       {isVictory.length ? (
         <Fragment>
-          <CardsDirectory cardType={CARD_TYPE_CLASSES[gameDifficulty]} />
-          <div className='bottom-panel'>
-            <Button
-              buttonType={BUTTON_TYPE_CLASSES.restart}
-              type='button'
-              onClick={startNewGame}
-            >
-              Restart Game
-            </Button>
+          <div className='top-panel'>
+            <BackButton />
             <Counter />
           </div>
+          <CardsDirectory cardType={CARD_TYPE_CLASSES[gameDifficulty]} />
+          <Button
+            buttonType={BUTTON_TYPE_CLASSES.restart}
+            type='button'
+            onClick={startNewGame}
+          >
+            Restart Game
+          </Button>
         </Fragment>
       ) : (
         <Fragment>
