@@ -49,12 +49,12 @@ const GameArea = () => {
   const getCardsCount = (gameDifficulty) =>
     gameDifficulties[gameDifficulty];
 
-  const startNewGame = () => {
+  const startNewGame = async () => {
     const cardsCount = getCardsCount(gameDifficulty);
     const randomCards = getRandomCards(cardsCount);
     const copiedCards = getCopiedCards(randomCards);
     const cardsToShuffle = [...randomCards.concat(copiedCards)];
-    const shuffledCards = getShuffledCards(cardsToShuffle);
+    const shuffledCards = await getShuffledCards(cardsToShuffle);
     const initialCounterValue = 0;
 
     dispatch(setCards(shuffledCards));
