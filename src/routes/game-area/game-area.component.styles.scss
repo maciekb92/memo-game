@@ -1,3 +1,19 @@
+.game-area-container {
+  width: 500px;
+}
+
+.easy {
+  margin: 12vh 0;
+}
+
+.medium {
+  margin: 8vh 0;
+}
+
+.hard {
+  margin: 0;
+}
+
 .top-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;

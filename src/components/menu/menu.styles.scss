@@ -1,6 +1,4 @@
 .menu-container {
-  height: 500px;
-  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +15,7 @@
 .difficulty-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   align-items: center;
 
   h2 {

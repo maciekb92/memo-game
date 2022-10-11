@@ -67,14 +67,14 @@ const GameArea = () => {
   }, []);
 
   return (
-    <div className='game-area-container'>
+    <div className={`game-area-container ${CARD_TYPE_CLASSES[gameDifficulty]}`}>
       {isVictory.length ? (
         <Fragment>
           <div className='top-panel'>
             <BackButton />
             <Counter />
           </div>
-          <CardsDirectory cardType={CARD_TYPE_CLASSES[gameDifficulty]} />
+          <CardsDirectory />
           <Button
             buttonType={BUTTON_TYPE_CLASSES.restart}
             type='button'

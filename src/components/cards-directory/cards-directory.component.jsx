@@ -14,7 +14,7 @@ import { setCounterValue } from '../../store/counter/counter.action';
 import SingleCard from '../single-card/single-card.component';
 import './cards-directory.styles.scss';
 
-const CardsDirectory = ({ cardType }) => {
+const CardsDirectory = () => {
     const dispatch = useDispatch();
     const cards = useSelector(selectCards);
     const counterValue = useSelector(selectCounterValue);
@@ -67,7 +67,7 @@ const CardsDirectory = ({ cardType }) => {
     });
 
     return (
-        <div className={`cards-directory-container ${cardType}`}>
+        <div className={'cards-directory-container'}>
             {cards.map((card) => (
                 <SingleCard key={card.id} card={card} />
             ))}

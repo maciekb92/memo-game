@@ -1,25 +1,12 @@
 .cards-directory-container {
   background-color: #fef0ef;
   border: 5px solid #fef0ef;
-  border-radius: 4%;
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   gap: 5px;
-}
-
-.easy {
-  width: 500px;
-  height: 380px;
-}
-
-.medium {
-  width: 500px;
-  height: 500px;
-}
-
-.hard {
-  width: 620px;
-  height: 500px;
+  margin: 5px;
+  padding: 5px 0;
 }
